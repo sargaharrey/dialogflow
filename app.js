@@ -165,7 +165,7 @@ app.get('/projects/:Id', async (req, res) => {
 
   const data = [entitesResponses.data.entityTypes, intntsResponses.data.intents]
   // console.log(data[0].entityTypes, data[1].intents)   
-  console.log(data[0][0].displayName, data[1][00].displayName)
+  // console.log(data[0][0].displayName, data[1][00].displayName)
   res.render('index.ejs', { data })
 
 
