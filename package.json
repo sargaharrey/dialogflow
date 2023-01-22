@@ -1,11 +1,14 @@
 {
-  "name": "jwt-project",
+  "name": "vercel-testing",
   "version": "1.0.0",
-  "description": "A demo about authentication using jwt",
+  "description": "node express testing",
   "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
-    "start": "node test3.js",
-    "dev": "nodemon test3.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
