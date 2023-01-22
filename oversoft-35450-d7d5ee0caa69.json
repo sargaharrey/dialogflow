@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "taleb-app-368012",
+  "private_key_id": "dd9b045527287091fa98ad68bef0c0632b5f21bf",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDfKqqdCA8qWC20\nCEc8beG0UZlQsha61feswPhD2K5E9qDwYTHc/8XylElUmGMrJVRyKLmJMgSzaL9e\nk7LuV1Ek64ihh9mgmcAYAtzPBgAgbNIO/m/u1C66FhXN05qPbUdROlUYiUykBUrJ\ne0y0yXyMRst3k0BOGzq8SuZ15s2iP1GwPe6Ccwt3oKSEckRhGvJtodkn4SCtXRHA\nXzTwn01ze67Js8rjD9R/+fMdKuUlXR8XA/W1zTbtY27uqRom9e4abxH1u1BLzytm\nPAmLV+grvri8X5LzWQuX0ym7ZKbbfENWm1t9dThXpaodyJqGN++PsomxOCx2Nr8Z\nlcOIgMvtAgMBAAECggEAMdusq/Ijvzxdk5oA3kuXUCul0t1CzkGk+LPRE4lan94w\n5Rt14i/Dl/dQrcVw7HAF3o5iKzhhS/rkPFtHr8+SuaqkhyAcezC2dbbYAamPyC6/\nvGlUdRlzChCKlQZIQvBxbUCYx+dO19s10u9I2yAjwwxDA2dCx+B1/iDGvcMPoIZV\nn19gQwVv6MFbeN1z08H+9MKZVH11KLmjQPwBUKq3qQFSoYLfYqzYEP98gps6nKNc\nKIceawz3BRUgz0R8aoQQ0GTdvXXtsgaaUK8iT4M4IQsM5QIaVfAMU1FtYqdCcGeN\nGjcRXH4uSua0D7ovRf+fWq62GZjO93WCxK56yA74sQKBgQD2CiGrky49RghTSYSv\nlYfugVx4s7fDTLbt10e02j7F5x1B/9CoB3RCr1JrpfqTnyA26mOhMufC9dI8AI05\nlgQFMt64htnpwitDdzZgL2gOINTPF5LymcjG4+YTUil0loRsOm4DfNjo7N8ZEBSv\n+b8MuwbLk/QmnycGkWqjYxOUMQKBgQDoM3zxUMrc3k74pY+6DyiKj27cZwRjKEHQ\n5uN8+x94ILAinVZa1BXgXaV/GQXskFt/ynt7prXgix06UawSK0HDaQgVYPOJp9Ny\nzTr2XsyoZ5X566m8ItBLoz8AhzJbQQVvJOGdIBO+l/fXneZbtlpp4Mym2/fP7nSq\nogg1zdxwfQKBgQCMDfRgsKVvp7/xeTYYpSv9rpGu+86tU6wF87gT0PBOw2K6QR7L\np4KcuyRVtuPOyJQT7pTMHCglqL0F/uJlV2nuc6iorcq58BekjeXcFuBKupGpWSgD\nBVtvLCe589k5Tr0Oxqv9PEJVRREyOR8tlSMV4hjaJdyjZ5FVgc2MOEfa4QKBgQC+\nfu8z8rpbNS7IotslI6Z49m9W9lUNHEvSnHlpYYRRw099NmNQJMrFxU4u1VKc31mR\nn4ZqzTxNORQDclmelkpfjF2LXHywJDU+68xBr0hrqH/MB2C67jzAsO7Q+hl/7/oL\nUtCdXWGVbYtxIyOHfjTyw/Bhu/i0Z8bi7geaTIda6QKBgHNLoajLuAF8XurTUYRC\nMN1NbhvgxT+HH8UO3GpMMwPQU8/IEpXy0Aa7uG89NJdZ5N9MbN6qbd0tQ4Firr46\n0JZ1DCxAo5vp1AQg7dDQvk9a3R+6acjg3+eOVCzRSqXQ+guzBe9kfS4gpkCit1Cz\nUnv5bjBIXy3sonRect1fhGhN\n-----END PRIVATE KEY-----\n",
+  "client_email": "test-518@taleb-app-368012.iam.gserviceaccount.com",
+  "client_id": "110228808577882954617",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/test-518%40taleb-app-368012.iam.gserviceaccount.com"
+}
