@@ -84,6 +84,22 @@
                         <% } %>
                         
 <% } %>
+  <% else { %>
+      <tr>
+                        <th scope="row">
+                            <%=  %>
+                        </th>
+                    <th scope="row">
+                        <%= i %>
+                    </th>
+                    <td>
+                        <%=  %>
+                    </td>
+                    <td>
+                        <%=  %>
+                    </td>
+                    </tr>
+       <% } %>   
 <% } %>
             </tbody>
         </table>
@@ -100,7 +116,7 @@
                 </tr>
             </thead>
             <tbody>
-             <% if(result2 != undefied){ %>
+             <% if(result2){ %>
                 <% for (let i=0; i< result2.length;i++ ) { %>
         <% for (let i2=0; i2< result2.length;i2++ ) { %>
                     <tr>
@@ -119,8 +135,24 @@
                     </tr>
                     <% } %>
         <% } %>
+        <% else { %>
+          <tr>
+                        <th scope="row">
+                            <%=  %>
+                        </th>
+                    <th scope="row">
+                        <%= i %>
+                    </th>
+                    <td>
+                        <%=  %>
+                    </td>
+                    <td>
+                        <%=  %>
+                    </td>
+                    </tr>
+          
         <% } %>
-        
+        <% } %>
             </tbody>
         </table>
     </div>
