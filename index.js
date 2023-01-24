@@ -118,7 +118,7 @@ app.get('/upload',  async (req, res) => {
          parent: `projects/${file.project_id}/agent`
     }).then( item=> 
      responses.push(item)
-            )}
+            )})
     // console.log(authIDs) 
     
    await authIDs.push(`./${req.url.split('=')[1]}`) 
