@@ -240,7 +240,7 @@ app.get('/search', async (req, res) => {
     // var finnal = result
 
     console.log(finalResult)
-    await  res.render('DataTables', { finalResult ,projectIds });
+     res.render('DataTables', { finalResult, projectIds });
     // console.log(req.query)
 
     // const auth = new google.auth.JWT(
