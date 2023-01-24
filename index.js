@@ -142,6 +142,8 @@ app.get('/search', async (req, res) => {
     console.log(DFSFilesRoutes[0])
     // console.log('.............................', DFSFiles )
     var projectIds = req.query.projects
+    console.log(projectIds)
+    var finalResult = []
     var result = []
     var result2 = []
 
@@ -181,9 +183,9 @@ app.get('/search', async (req, res) => {
         // , query: `displayName:${searchParameter}` 
         clientIntents.listIntents({ parent: agentPathIntent, query:`name:${searchParameter}` })
             .then(responses => {
-                const intents = responses[0];
+               intentsArr = responses[0];
                 // console.log('Intents:');
-               intentsArr.push(intents)})
+              })
             .catch(err => {
                 console.error('Failed to list intents:', err);
             });
@@ -192,47 +194,53 @@ app.get('/search', async (req, res) => {
 
         clientEntites.listEntityTypes({ parent: agentPathEntity, query: `name:${searchParameter}` })
             .then(responses => {
-                const entities = responses[0];
+                entitiesArr =  responses[0];
                 // console.log('entities:');
-                entitiesArr.push(entities)
+             
                 
             }).catch(err => {
                 console.error('Failed to list intents:', err);
             });
-   
+        console.log(searchParameter.replace(/[+]/g, ' '))
+
+        // console.log(';;;;;;;;;;;;;;;;;;;;;',intents,entities)
+        // var dat = fuzzy.filter(`${searchParameter}`, intentsArr)     
+
+        if (req.query.parameters === 'action') {
+            intentsArr.filter(item => item.action === searchParameter.replace(/[+]/g, ' '))
+            entitiesArr.filter(item => item.action === searchParameter.replace(/[+]/g, ' ')) 
+
+        }
+        else if (req.query.parameters === 'name') {
+           
+
+            intentsArr.filter(item => item.name === searchParameter.replace(/[+]/g, ' '))
+            entitiesArr.filter(item => item.name === searchParameter.replace(/[+]/g, ' ')) 
+        }
+        else {
+             intentsArr.filter(item => item.displayName === searchParameter.replace(/[+]/g, ' '))
+            entitiesArr.filter(item => item.displayName === searchParameter.replace(/[+]/g, ' ')) 
+            // result2= entitiesArr.filter(item => item.displayName === searchParameter.replace(/[+]/g, ' '))
+        }
+        finalResult.push([intentsArr, entitiesArr])
+        // console.log(finalResult.push([intentsArr, entitiesArr]))
         }
     // console.log(encodeURIComponent(searchParameter))
     // const filterd = Object.entries(intents).map(item => ite==)
-    console.log(searchParameter.replace(/[+]/g, ' ')) 
-   
-    // console.log(';;;;;;;;;;;;;;;;;;;;;',intents,entities)
-    // var dat = fuzzy.filter(`${searchParameter}`, intentsArr)     
+    
+    //  console.log('111111111111111111', intentsArr.filter(item => item.displayName === searchParameter.replace(/[+]/g, ' ')  ))
 
-    if (req.query.parameters === 'action'){
-
-        result.push(intentsArr.flat(6).filter(item => item.action === searchParameter.replace(/[+]/g, ' ')))
-        result2.push(entitiesArr.flat(6).filter(item => item.action === searchParameter.replace(/[+]/g, ' ')))
-
-    }
-    else if (req.query.parameters === 'name'){
-        result.push(intentsArr.flat(6).filter(item => item.name === searchParameter.replace(/[+]/g, ' ')))
-        result2.push(entitiesArr.flat(6).filter(item => item.name === searchParameter.replace(/[+]/g, ' ')))
-    }
-    else {
-        result.push(intentsArr.flat(6).filter(item => item.displayName === searchParameter.replace(/[+]/g, ' ')))
-        result2.push(entitiesArr.flat(6).filter(item => item.displayName === searchParameter.replace(/[+]/g, ' ')))
-    }
-    //  console.log('111111111111111111', intentsArr.flat(6).filter(item => item.displayName === searchParameter.replace(/[+]/g, ' ')  ))
-    console.log(result)
     // let extractedString = myString.substring(startIndex, endIndex);
- data.push(result)
-    data.push(result2)
+//  data.push(result)
+//     data.push(result2)
 
-    console.log('cccccccccccccccccccccc', result, result2)
-
+    // console.log('cccccccccccccccccccccc', intentsArr)
+ 
     //  var finnal = [result, result2]
     // var finnal = result
-   await res.render('DataTables', { result, result2 });
+
+    console.log(finalResult)
+    await  res.render('DataTables', { finalResult ,projectIds });
     // console.log(req.query)
 
     // const auth = new google.auth.JWT(
