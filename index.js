@@ -117,7 +117,7 @@ app.get('/upload',  async (req, res) => {
     }))
     // console.log(authIDs) 
     
-    authIDs.push(`./${req.url.split('=')[1]}`) 
+   await authIDs.push(`./${req.url.split('=')[1]}`) 
     // console.log(auth)
     res.redirect('/');
 
@@ -228,7 +228,7 @@ app.get('/search', async (req, res) => {
 
     //  var finnal = [result, result2]
     // var finnal = result
-    res.render('DataTables', { result, result2 });
+   await res.render('DataTables', { result, result2 });
     // console.log(req.query)
 
     // const auth = new google.auth.JWT(
