@@ -121,7 +121,7 @@ app.get('/upload',  async (req, res) => {
             )})
     // console.log(authIDs) 
     
-   await authIDs.push(`./${req.url.split('=')[1]}`) 
+    authIDs.push(`./${req.url.split('=')[1]}`) 
     // console.log(auth)
     res.redirect('/');
 
