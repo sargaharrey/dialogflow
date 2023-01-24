@@ -49,7 +49,10 @@ jwtClient.authorize((err, tokens) => {
     }
 })
 
-
+app.use(responseTime((req, res, time) => {
+    res.setHeader('Cache-Control', 'no-cache');
+    res.setHeader('Expires', '-1');
+}));
 var responses = []
   var projects = []
 // Use the JWT client to create a Dialogflow client
