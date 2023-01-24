@@ -147,7 +147,7 @@ app.get('/search', async (req, res) => {
     // var url_parts = url.parse(req.url, true);
     // var query = url_parts.query;
     // console.log(query)
-//     const dialogflow = require('dialogflow');
+    const dialogflow = require('dialogflow');
  
     // console.log()
     for (let i = 0; i < DFSFilesRoutes.length;i++){
