@@ -49,7 +49,10 @@ jwtClient.authorize((err, tokens) => {
     }
 })
 
-
+// app.use(responseTime((req, res, time) => {
+//     res.setHeader('Cache-Control', 'no-cache');
+//     res.setHeader('Expires', '-1');
+// }));
 var responses = []
   var projects = []
 // Use the JWT client to create a Dialogflow client
@@ -102,7 +105,7 @@ app.get('/', async (req, res) => {
 app.get('/upload',  async (req, res) => {
 
     // console.log(req)
-    const file = require(`./${req.url.split('=')[1]}.json`)
+    const file = require(`./${req.url.split('=')[1].substr(0,req.url.split('=')[1].length-5)}`)
     // console.log('======================', `./${req.url.split('=')[1]}`)
     const auth = new google.auth.JWT(
       file.client_email,
@@ -110,18 +113,19 @@ app.get('/upload',  async (req, res) => {
       file.private_key,
       ['https://www.googleapis.com/auth/dialogflow']
     );
-   
-     responses.push(await dialogflow.projects.agent.entityTypes.list({
+    dialogflow.projects.agent.entityTypes.list({
         auth: auth,
          parent: `projects/${file.project_id}/agent`
-    }))
+    }).then( item=> 
+     responses.push(item)
+            )
     // console.log(authIDs) 
     
     authIDs.push(`./${req.url.split('=')[1]}`) 
     // console.log(auth)
     res.redirect('/');
 
-});
+})
 
 app.get('/search', async (req, res) => {
    
@@ -228,7 +232,7 @@ app.get('/search', async (req, res) => {
 
     //  var finnal = [result, result2]
     // var finnal = result
-    res.render('DataTables', { result, result2 });
+   await res.render('DataTables', { result, result2 });
     // console.log(req.query)
 
     // const auth = new google.auth.JWT(
