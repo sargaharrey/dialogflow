@@ -183,7 +183,7 @@ app.get('/search', async (req, res) => {
         // , query: `displayName:${searchParameter}` 
         clientIntents.listIntents({ parent: agentPathIntent, query:`name:${searchParameter}` })
             .then(responses => {
-               intentsArr = responses[0];
+                 intentsArr.push(responses[0]);
                 // console.log('Intents:');
               })
             .catch(err => {
@@ -194,7 +194,7 @@ app.get('/search', async (req, res) => {
 
         clientEntites.listEntityTypes({ parent: agentPathEntity, query: `name:${searchParameter}` })
             .then(responses => {
-                entitiesArr =  responses[0];
+                entitiesArr.push(responses[0]);
                 // console.log('entities:');
              
                 
@@ -207,19 +207,19 @@ app.get('/search', async (req, res) => {
         // var dat = fuzzy.filter(`${searchParameter}`, intentsArr)     
 
         if (req.query.parameters === 'action') {
-            intentsArr.filter(item => item.action === searchParameter.replace(/[+]/g, ' '))
-            entitiesArr.filter(item => item.action === searchParameter.replace(/[+]/g, ' ')) 
+            intentsArr.map( i => i.filter(item => item.action === searchParameter.replace(/[+]/g, ' ')))
+            entitiesArr.map(i => i.filter(item => item.action === searchParameter.replace(/[+]/g, ' '))) 
 
         }
         else if (req.query.parameters === 'name') {
            
 
-            intentsArr.filter(item => item.name === searchParameter.replace(/[+]/g, ' '))
-            entitiesArr.filter(item => item.name === searchParameter.replace(/[+]/g, ' ')) 
+            intentsArr.map(i => i.filter(item => item.name === searchParameter.replace(/[+]/g, ' ')))
+            entitiesArr.map(i => i.filter(item => item.name === searchParameter.replace(/[+]/g, ' '))) 
         }
         else {
-             intentsArr.filter(item => item.displayName === searchParameter.replace(/[+]/g, ' '))
-            entitiesArr.filter(item => item.displayName === searchParameter.replace(/[+]/g, ' ')) 
+            intentsArr.map(i => i.filter(item => item.displayName === searchParameter.replace(/[+]/g, ' ')))
+            entitiesArr.map(i => i.filter(item => item.displayName === searchParameter.replace(/[+]/g, ' '))) 
             // result2= entitiesArr.filter(item => item.displayName === searchParameter.replace(/[+]/g, ' '))
         }
         finalResult.push([intentsArr, entitiesArr])
