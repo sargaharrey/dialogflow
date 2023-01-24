@@ -50,7 +50,7 @@
   <input type="submit" value="submit">
         </form> -->
        
-        <% for (let ia=0; ia < finalResult.length;ia++ ) { %>
+        <% for (let ia=0; ia < finalResulta.length;ia++ ) { %>
            
             <h2>
                 <%= projectIds[ia] %>
@@ -70,9 +70,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <% if(finalResult[ia].length> 1){ %>
-                            <% for (let i=0; i< ia;i++ ) { %>
-                            <% for (let i2=0; i2< i;i2++ ) { %>
+                <% if(finalResulta[ia].length > 0){ %>
+                            <% for (let i=0; i< finalResulta[ia][0].length;i++ ) { %>
+                            <% for (let i2=0; i2< finalResulta[ia][0].filter(item=> item.length > 0)[i].length;i2++ ) { %>
                         <tr>
                             <th scope="row">
                                 <%= %>
@@ -80,19 +80,19 @@
                             <th scope="row">
                                 <%= i %>
                             </th>
-                        <td>
-                            <% if(finalResult[ia][0].length> 1){ %>
-                                <%= finalResult[ia][0][i][i2].name %>
+                    <td>
+                    <% console.log(finalResulta[ia][0].filter(item=> item.length > 0)[i]) %> 
+                        <%= finalResulta[ia][0].filter(item=> item.length > 0)[i][i2].name %>
+                    
+                    </td>
+                    <td>
+                        <%= finalResulta[ia][0].filter(item=> item.length > 0)[i][i2].displayName %>
+                    </td>
+
                         
-                        </td>
-                        <td>
-                            <%= finalResult[ia][0][i][i2].displayName %>
-                        </td>
-                        
-                        
-                        <% } %>
+                  
                         </tr>
-                                        <% } %>
+                                <% } %>
             <% } %>
                                             <% } else { %>
                                                 <tr>
@@ -110,11 +110,12 @@
                                                         <%=  %>
                                                     </td>
                                                 </tr>
-              
-                                                  <% } %>
+           
+                        <% } %> 
                     </tbody>
                 </table>
                 
+
                 <table id="table" class="table table-striped " data-filter-control="true" data-show-search-clear-button="true"
                     data-filter-control-container="#search">
                     <thead>
@@ -128,9 +129,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <% if(finalResult[ia].length> 1){ %>
-                            <% for (let i=0; i< ia;i++ ) { %>
-                                <% for (let i2=0; i2< i;i2++ ) { %>
+                     <%  if(finalResulta[ia].length > 0) { %>
+                            <% for (let i=0; i< finalResulta[ia][1].length;i++ ) { %>
+                                <% for (let i2=0; i2< finalResulta[ia][1].filter(item=> item.length > 0)[i].length;i2++ ) { %>
                                 <tr>
                                     <th scope="row">
                                         <%= %>
@@ -138,21 +139,19 @@
                                     <th scope="row">
                                         <%= i %>
                                     </th>
-                            <td>
-                                <% if(finalResult[ia][1].length> 1){ %>
-                                    <%= finalResult[ia][1][i][i2].name %>
-                            
-                            </td>
-                            <td>
-                                <%= finalResult[ia][1][i][i2].displayName %>
-                            </td>
+                        <td>
+                            <% console.log(finalResulta[ia][1].filter(item=> item.length > 0)[i]) %>
+                                <%= finalResulta[ia][0].filter(item=> item.length > 0)[i][i2].name %>
+                        
+                        </td>
+                        <td>
+                            <%= finalResulta[ia][1].filter(item=> item.length > 0)[i][i2].displayName %>
+                        </td>
 
-
-                                        <% } %>
+                                        
                                 </tr>
-                                <% } %>
-                                 
-                        <% } %>
+                            <% } %>
+                            <% } %>
                                             <% } else { %>
                                                 <tr>
                                                     <th scope="row">
@@ -168,12 +167,11 @@
                                                         <%= %>
                                                     </td>
                                                 </tr>
-                <% } %>
-                                             
+          
+        <% } %>
                     </tbody>
                 </table>
-
-      <% } %>
+<% } %>
        
     </div>
 </body>

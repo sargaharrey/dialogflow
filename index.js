@@ -225,6 +225,7 @@ app.get('/search', async (req, res) => {
         finalResult.push([intentsArr, entitiesArr])
         // console.log(finalResult.push([intentsArr, entitiesArr]))
         }
+    // console.log(finalResult.map(i => i.flat(10).filter(a => a.length > 0)))
     // console.log(encodeURIComponent(searchParameter))
     // const filterd = Object.entries(intents).map(item => ite==)
     
@@ -239,8 +240,11 @@ app.get('/search', async (req, res) => {
     //  var finnal = [result, result2]
     // var finnal = result
 
+   const finalIntents =  finalResult[0].map( i=> i.filter(a => a.length > 0))
+    const finalEntites = finalResult[1].map(i => i.filter(a => a.length > 0))      
+    finalResulta = [finalIntents, finalEntites]
     console.log(finalResult)
-     res.render('DataTables', { finalResult, projectIds });
+    res.render('DataTables', { finalResulta, projectIds });
     // console.log(req.query)
 
     // const auth = new google.auth.JWT(
