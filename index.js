@@ -118,14 +118,14 @@ app.get('/upload',  async (req, res) => {
          parent: `projects/${file.project_id}/agent`
     }).then( item=> 
      responses.push(item)
-            )})
+            )
     // console.log(authIDs) 
     
     authIDs.push(`./${req.url.split('=')[1]}`) 
     // console.log(auth)
     res.redirect('/');
 
-});
+})
 
 app.get('/search', async (req, res) => {
    
