@@ -12,67 +12,76 @@
 
 
     <div class="container">
-
-        <form id="search" method="GET" action="/customize">
+        <div class="mb-3">
+            <label for="upload" class="form-label">Upload Agent</label>
+        
+            <form action="/upload" method="GET">
+            <input type="file" name="upload" class="form-control bootstrap-table-filter-control-name" id="formSelect1" />
+            <input type="submit" value="submit">
+        </form>
+        
+        
+        </div>
+        <form id="search" method="GET" action="/search" >
             <div class="accordion" id="accordionPanelsStayOpen">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="panelsStayOpen-heading1"><span class="accordion-button"
-                            type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse1"
+                            type="button"
                             aria-expanded="true" aria-controls="panelsStayOpen-collapse1">Filterform somewhere</button>
                     </h2>
                     <div id="panelsStayOpen-collapse1" class="accordion-collapse collapse show"
                         aria-labelledby="panelsStayOpen-heading1">
                         <div class="accordion-body">
-                            <div class="mb-3"><label for="file" class="form-label" >upload project</label><input
-                                    class="form-control bootstrap-table-filter-control-name" type="file" id="formFile"  name="upload"></input></div>
-                            <div class="mb-3"><label for="grbuchstabe" class="form-label">intent</label><input
-                                    class="form-control bootstrap-table-filter-control-name" id="grbuchstabe"
-                                    name="intents"></input></div>
-                            <div class="mb-3"><label for="grbuchstabe" class="form-label"
-                                    name="entities">entities</label><input name="entities"
-                                    class="form-control bootstrap-table-filter-control-name" id="grbuchstabe"></input>
+                            
+                            <div class="mb-3"><label for="formSelect" class="form-label" >choose project</label><select
+                                    class="form-control bootstrap-table-filter-control-name" id="formSelect"  name="projects"  multiple>
+                                <% for (let i=0; i< projectIds.length;i++ ) { %>
+                                    <option >
+                                <%= projectIds[i].id %>
+                                    </option>
+                                    <% } %>
+                                </select>
+                                </div>
+                                <div name="projectsIDs" for="projectIds">
+                                <% for (let i=0; i< projectIds.length;i++ ) { %>
+                                     <input type="hidden" name=<%=projectIds %> value=""> 
+                                    <% } %>
+                                </div>  
                             </div>
-                            <!-- <div class="mb-3"><label for="datensatzkennung" class="form-label">Price</label><input
-                            class="form-control bootstrap-table-filter-control-price" id="datensatzkennung"></input>
-                    </div> -->
+                        <div class="mb-3">
+                            <label for="parameters" class="form-label">choose parameters</label>
+                        <select
+                                class="form-control bootstrap-table-filter-control-name" id="parameters" name="parameters">
+                              
+                                    <option>
+                                        action                                
+                                    </option>
+                                    <option>
+                                        name
+                                    </option>
+                                    <option>
+                                        displayName
+                                    </option>
+                                 
+                                 
+                            </select>
+                 
+                          
+                           
+
+                    
+                          
                         </div>
+
+
+                        <input type="text" name="parameter" class="form-control bootstrap-table-filter-control-name" id="formSelect1"
+                            placeholder="parameter" />
                     </div>
                 </div>
             </div>
             <input type="submit" value="submit">
         </form>
-        <table id="table" class="table table-striped " data-filter-control="true" data-show-search-clear-button="true"
-            data-filter-control-container="#search">
-            <thead>
-                <tr>
-                    <th data-field="id">ID</th>
-                    <th data-field="name" data-filter-control="input"> Name</th>
-                    <th data-field="view" data-filter-control="input">view projects</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% for (let i=0; i< projectIds.length;i++ ) { %>
-                 
-                        <tr>
-                            <th scope="row">
-                                <% i %>
-                            </th>
-                            <td>
-                                <%= projectIds[i] %>
-                            </td>
-                            <td>
-                                <form action=/projects/<%=i%> method="GET">
-                                    <input type="submit" class='btn btn-secondary'  value="submit" />
-                                </form>
-                             
-                            </td>
-                        </tr>
-              
-                            <% } %>
-
-
-            </tbody>
-        </table>
+        
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"
