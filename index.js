@@ -102,7 +102,7 @@ app.get('/', async (req, res) => {
 app.get('/upload',  async (req, res) => {
 
     // console.log(req)
-    const file = require(`./${req.url.split('=')[1]}.json`)
+    const file = require(`./${req.url.split('=')[1]}`)
     // console.log('======================', `./${req.url.split('=')[1]}`)
     const auth = new google.auth.JWT(
       file.client_email,
@@ -147,7 +147,7 @@ app.get('/search', async (req, res) => {
     // var url_parts = url.parse(req.url, true);
     // var query = url_parts.query;
     // console.log(query)
-    const dialogflow = require('dialogflow');
+//     const dialogflow = require('dialogflow');
  
     // console.log()
     for (let i = 0; i < DFSFilesRoutes.length;i++){
