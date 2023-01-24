@@ -113,11 +113,12 @@ app.get('/upload',  async (req, res) => {
       file.private_key,
       ['https://www.googleapis.com/auth/dialogflow']
     );
-   
-     responses.push(await dialogflow.projects.agent.entityTypes.list({
+    dialogflow.projects.agent.entityTypes.list({
         auth: auth,
          parent: `projects/${file.project_id}/agent`
-    }))
+    }).then( item=> 
+     responses.push(item)
+            )}
     // console.log(authIDs) 
     
    await authIDs.push(`./${req.url.split('=')[1]}`) 
