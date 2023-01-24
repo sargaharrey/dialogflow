@@ -23,7 +23,7 @@
 
     <div class="container">
 
-        <form id="search"  method="GET" action="/customize">
+        <!-- <form id="search"  method="GET" action="/customize">
             <div class="accordion" id="accordionPanelsStayOpen">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="panelsStayOpen-heading1"><span class="accordion-button"
@@ -48,31 +48,77 @@
                 </div>
             </div>
   <input type="submit" value="submit">
-        </form>
+        </form> -->
         <table id="table" class="table table-striped " data-filter-control="true" data-show-search-clear-button="true"
             data-filter-control-container="#search" > 
             <thead>
                 <tr>
+                    
+                        <th data-field="name" data-filter-control="input"> intent</th>
                     <th data-field="id">ID</th>
-                    <th data-field="name" data-filter-control="input"> intents</th>
-                    <th data-field="price" data-filter-control="select">entities</th>
+                   
+            <th data-field="name" data-filter-control="input"> name</th>
+            <th data-field="price" data-filter-control="select">displayName</th>
                 </tr>
             </thead>
             <tbody>
-                <% for (let i=0; i< entities.length;i++ ) { %>
-                    <% for (const entitiey of entities) { %>
+                        <% for (let i=0; i< result2.length;i++ ) { %>
+                            <% for (let i2=0; i2< result2.length;i2++ ) { %>
+                  
                         <tr>
                             <th scope="row">
-                                <% i %>
+                                <%= %>
                             </th>
+                            <th scope="row">
+                                <%= i %>
+                            </th>
+                            
                             <td>
-                                <%= entities[i].name %>
+                                <%= result[i][i2].name %>
+                            </td>
+                            <td>
+                                <%= result[i][i2].displayName %>
                             </td>
                         </tr>
                         <% } %>
-                            <% } %>
+                        
+<% } %>
 
+            </tbody>
+        </table>
 
+        <table id="table" class="table table-striped " data-filter-control="true" data-show-search-clear-button="true"
+            data-filter-control-container="#search">
+            <thead>
+                <tr>
+
+                    <th data-field="name" data-filter-control="input"> entity</th>
+                    <th data-field="id">ID</th>
+                    <th data-field="name" data-filter-control="input"> name</th>
+                    <th data-field="price" data-filter-control="select">displayName</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let i=0; i< result2.length;i++ ) { %>
+        <% for (let i2=0; i2< result2.length;i2++ ) { %>
+                    <tr>
+                        <th scope="row">
+                            <%=  %>
+                        </th>
+                    <th scope="row">
+                        <%= i %>
+                    </th>
+                    <td>
+                        <%= result[i][i2].name %>
+                    </td>
+                    <td>
+                        <%= result[i][i2].displayName %>
+                    </td>
+                    </tr>
+                    <% } %>
+        
+        <% } %>
+        
             </tbody>
         </table>
     </div>

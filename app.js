@@ -79,20 +79,21 @@ const projectId = 'oversoft-35450';
 
 app.post('/upload', upload.single('jsonFile'), async (req, res) => {
 
+console.log(req)
 
-
-  const auth = new google.auth.JWT(
-    req.file.path.client_email,
-    null,
-    req.file.path.private_key,
-    ['https://www.googleapis.com/auth/dialogflow']
-  );
-  authIDs.push(req.file.path)
-  //  responses.push(await dialogflow.projects.agent.entityTypes.list({
-  //     auth: auth,
-  //     parent: `projects/${req.file.path.project_id}/agent`
-  // }))
-
+  // const auth = new google.auth.JWT(
+  //   req.file.path.client_email,
+  //   null,
+  //   req.file.path.private_key,
+  //   ['https://www.googleapis.com/auth/dialogflow']
+  // );
+  // authIDs.push(req.file.path) 
+  // //  responses.push(await dialogflow.projects.agent.entityTypes.list({
+  // //     auth: auth,
+  // //     parent: `projects/${req.file.path.project_id}/agent`
+  // // }))
+  // console.log(authIDs)
+  // console.log(auth)
   res.redirect('/');
 
 });
@@ -215,6 +216,97 @@ app.get('/projects/:Id', async (req, res) => {
 //         });
 //         res.redirect('/')
 // });
+
+  
+        // console.log('==========================================', agentPathIntent, agentPathEntity)
+
+        // console.log(client)
+        // Call the intents.list method
+        // clientIntents.listIntents({ request: { parent: clientIntents.projectAgentPath(projectIds[i]) } })
+        //     .then(responses => {
+        //         const intents = responses[0];
+        //         console.log('Intents:');
+        //         intents.forEach(intent => {
+        //             console.log(` - ${intent}`);
+        //         });
+        //     })
+        //     .catch(err => {
+        //         console.error('Failed to list intents', err);
+        //     });
+     // clientIntents.listIntents({
+        //     auth: new google.auth.JWT(
+        //         DFSFilesRoutes[i].client_email,
+        //         null,
+        //         DFSFilesRoutes[i].private_key,
+        //         ['https://www.googleapis.com/auth/dialogflow']
+        //     ),
+
+        //     parent: agentPathIntent,
+        //     //  filter: { displayName: searchParameter },
+        // }, (err, response) => {
+        //     if (err) return console.error(err);
+        //     intents.push(response);
+        //     console.log(response)
+        // });
+
+    
+        // clientEntites.listEntityTypes({
+        //     auth: new google.auth.JWT(
+        //         DFSFilesRoutes[i].client_email,
+        //             null,
+        //         DFSFilesRoutes[i].private_key,
+        //             ['https://www.googleapis.com/auth/dialogflow']
+        //         ),
+            
+        //     parent: agentPathEntity,
+        //     //  filter: { displayName: searchParameter },
+        // }, (err, response) => {
+        //     if (err) return console.error(err);
+        //     entities.push(response);
+        //      console.log(response)
+        // });
+    }
+    
+    // alert(intents)
+
+    // console.log("$$$$$$$$$$$$$$$$",[intents, entities])
+    // console.log()
+    // let startIndex = projectIds.indexOf('projects');
+    // let endIndex = projectIds.indexOf('&') + endWord.length;
+
+//    console.log(intents.map(item => item.displayName))
+
+        // clientEntites.listEntityTypes({ request: { parent: clientEntites.projectAgentPath(projectIds[i]) } })
+        //     .then(responses => {
+        //         const entities = responses[0];
+        //         console.log('Entities:');
+        //         entities.forEach(entity => {
+        //             console.log(` - ${entity}`);
+        //         });
+        //     })
+        //     .catch(err => {
+        //         console.error('Failed to list entities', err);
+        //     });
+
+
+        // clientIntents.listIntents({
+        //     auth: new google.auth.JWT(
+        //         DFSFilesRoutes[i].client_email,
+        //         null,
+        //         DFSFilesRoutes[i].private_key,
+        //         ['https://www.googleapis.com/auth/dialogflow']
+        //     ),
+
+        //     parent: agentPathIntent,
+        //      filter:
+             
+        //   `name=${searchParameter}`
+        // }, (err, response) => {
+        //     if (err) return console.error(err);
+        //     entities.push(response);
+        //      console.log(response)
+
+        // });
 
 app.listen(3000, () => {
   console.log('Server started on port 3000');

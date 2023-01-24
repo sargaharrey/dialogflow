@@ -21,7 +21,8 @@
                     <th data-field="id">ID</th>
                   
                     <th data-field="price" data-filter-control="input">intent</th>
-                    <th data-field="price" data-filter-control="input">entint</th>
+                    <th data-field="price" data-filter-control="input">entitiy</th>
+                    <th data-field="price" data-filter-control="input">update</th>
 
                 </tr>
             </thead>
@@ -33,11 +34,22 @@
                                 <% i %>
                             </th>   
                             <td>
-                                <%= data[0][0].displayName %>
+                                <%= data[0].displayName %>
                             </td>
                             <td>
-                                <%= data[1][0].displayName %>
+                                <%= data[1].displayName %>
                             </td>
+                            <!-- <td>
+                                <form action=/customzie/<%=data[0][0].displayName%> method="GET">
+                                    <input type="text"  placeholder="update-intent" name="intent" />
+                                    <input type="submit" value="submit">
+                                </form>
+                                <form action=/customzie/<%=data[0][0].displayName%> method="GET">
+                                    <input type="text"  placeholder="update-entity" name="entity"/>
+                                    <input type="submit" value="submit">
+                                </form>
+
+                            </td> -->
                         </tr>
                         <% } %>
                           
