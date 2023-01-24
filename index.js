@@ -102,7 +102,7 @@ app.get('/', async (req, res) => {
 app.get('/upload',  async (req, res) => {
 
     // console.log(req)
-    const file = require(`./${req.url.split('=')[1].substr(0,req.url.split('=')[1].length-4)}`)
+    const file = require(`./${req.url.split('=')[1].substr(0,req.url.split('=')[1].length-5)}`)
     // console.log('======================', `./${req.url.split('=')[1]}`)
     const auth = new google.auth.JWT(
       file.client_email,
