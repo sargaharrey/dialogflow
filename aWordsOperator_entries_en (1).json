@@ -1,0 +1,376 @@
+[
+  {
+    "value": "aWordsUnhandled",
+    "synonyms": [
+      "@aWordsUnhandled"
+    ]
+  }
+]
+
+
+
+{
+  "id": "9c4c7ce3-d698-43df-bd51-d6c6530e167a",
+  "name": "--1-VW-DEV1",
+  "auto": true,
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "conditionalResponses": [],
+  "context": [],
+  "contexts": [],
+  "endInteraction": false,
+  "events": [
+    {
+      "name": "WELCOME"
+    }
+  ],
+  "fallbackIntent": false,
+  "liveAgentHandoff": false,
+  "parentId": null,
+  "followUpIntents": [],
+  "priority": 500000,
+  "responses": [
+    {
+      "action": "get_name_ymm",
+      "affectedContexts": [
+        {
+          "name": "config",
+          "lifespan": 99
+        },
+        {
+          "name": "greeting",
+          "lifespan": 1
+        },
+        {
+          "name": "makeAppt",
+          "lifespan": 1
+        },
+        {
+          "name": "NoName-followup",
+          "lifespan": 1
+        },
+        {
+          "name": "transferVM",
+          "lifespan": 99
+        },
+        {
+          "name": "fixedLine",
+          "lifespan": 99
+        },
+        {
+          "name": "adHoc",
+          "lifespan": 99
+        },
+        {
+          "name": "dropIn",
+          "lifespan": 99
+        },
+        {
+          "name": "compressed",
+          "lifespan": 99
+        },
+        {
+          "name": "processRecall",
+          "lifespan": 99
+        },
+        {
+          "name": "transferOperator",
+          "lifespan": 99
+        }
+      ],
+      "parameters": [
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "customerPhone",
+          "dataType": "@sys.any",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "1112223335",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "advisorNumber",
+          "dataType": "@sys.phone-number",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "16",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "advisorEmail",
+          "dataType": "@sys.any",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "booking@allio.io",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "businessName",
+          "dataType": "@sys.any",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "Test Boston VW",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "make",
+          "dataType": "@sys.any",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "VOLKSWAGEN",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "example",
+          "dataType": "@sys.any",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "Tiguan",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "welcomeFile",
+          "dataType": "@sys.any",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "<audio soundLevel=\"+15dB\" src=\"https://storage.googleapis.com/autoserviceai/0-ClientGreetings/BostonVWSD.ogg\"> \nWelcome to BostonVW Service Department. \n</audio>",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "greeting",
+          "dataType": "@sys.any",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "<audio soundLevel=\"+15dB\" src=\"https://storage.googleapis.com/autoserviceai/0-ClientGreetings/BostonVW.ogg\">\nWelcome to BostonVW Service Department. This is Allio, your digital assistant. I can book appointments or get you the help you need. How can I assist you today? \n</audio>",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "prompt",
+          "dataType": "@sys.any",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "<audio soundLevel=\"+15dB\" src=\"https://storage.googleapis.com/autoserviceai/S-PleaseSayMakeApptOrOther.ogg\">\nWould you like to make an appointment or are you calling about something else?</audio>",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "fallbackService",
+          "dataType": "@sys.any",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "DIAG",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "recallService",
+          "dataType": "@sys.any",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "DIAG",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "transportQuestion2",
+          "dataType": "@sys.any",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "<audio soundLevel=\"+15dB\" src=\"https://storage.googleapis.com/autoserviceai/dropOffWaitorRide.ogg\">Would you like to drop off your vehicle, wait at the dealership, or would you need a ride?</audio>",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "check_url",
+          "dataType": "@sys.any",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "https://sz9m33psn0.execute-api.us-east-1.amazonaws.com/xtime/check?id=BOSTONVW&brand=Volkswagen&dealer=bostonvolkswagen",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "book_url",
+          "dataType": "@sys.any",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "XXXhttps://sz9m33psn0.execute-api.us-east-1.amazonaws.com/xtime/book?id=BOSTONVW&dealer=bostonvolkswagen",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "WeekOpenCloseSatOpenClose",
+          "dataType": "@sys.any",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "7:00,18:59,5:00,13:15",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "hoursLocation",
+          "dataType": "@sys.any",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "We are located at 43 N Beacon St Watertown. Our service department is open 7 AM to 6 PM, Monday through Friday. and, 8 AM to 4 PM on Saturday",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "businessPhone",
+          "dataType": "@sys.phone-number",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "apiName",
+          "dataType": "@sys.any",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "apiReturnsCustomerName",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "timeSlots",
+          "dataType": "@sys.any",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "MTWTF,START,09:00,END,15:00,PERIOD,60,S,START,10:00,END,15:00,PERIOD,60,SKIPHR-336",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "scheduler",
+          "dataType": "@sys.any",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "wyvisor",
+          "outputDialogContexts": []
+        }
+      ],
+      "defaultResponsePlatforms": {
+        "telephony": true
+      },
+      "messages": [
+        {
+          "type": "message",
+          "condition": "",
+          "speech": [
+            "<speak>$greeting</speak>"
+          ]
+        }
+      ],
+      "resetContexts": false
+    }
+  ],
+  "rootParentId": null,
+  "templates": [],
+  "userSays": [
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "hi",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "90bc7e9a-24a6-425d-809f-6f3b5c6794db",
+      "updated": null
+    }
+  ],
+  "webhookForSlotFilling": false,
+  "webhookUsed": true
+}

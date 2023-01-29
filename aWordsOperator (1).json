@@ -1,0 +1,9 @@
+{
+  "id": "3e0635b9-5884-488d-9130-3a18152e3165",
+  "name": "aWordsOperator",
+  "isOverridable": true,
+  "isEnum": false,
+  "isRegexp": false,
+  "automatedExpansion": false,
+  "allowFuzzyExtraction": false
+}

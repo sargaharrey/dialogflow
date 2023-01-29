@@ -15,14 +15,9 @@
         <div class="mb-3">
             <label for="upload" class="form-label">Upload Agent</label>
         
-            <form action="/upload" method="GET">
+            <form action="/add" method="GET">
             <input type="file" name="upload" class="form-control bootstrap-table-filter-control-name" id="formSelect1" />
-            <input type="submit" value="submit">
-        </form>
-        
-        
-        </div>
-        <form id="search" method="GET" action="/search" >
+         
             <div class="accordion" id="accordionPanelsStayOpen">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="panelsStayOpen-heading1"><span class="accordion-button"
@@ -33,56 +28,169 @@
                         aria-labelledby="panelsStayOpen-heading1">
                         <div class="accordion-body">
                             
-                            <div class="mb-3"><label for="formSelect" class="form-label" >choose project</label><select
-                                    class="form-control bootstrap-table-filter-control-name" id="formSelect"  name="projects"  multiple>
-                                <% for (let i=0; i< projectIds.length;i++ ) { %>
-                                    <option >
-                                <%= projectIds[i].id %>
-                                    </option>
-                                    <% } %>
-                                </select>
-                                </div>
-                                <div name="projectsIDs" for="projectIds">
-                                <% for (let i=0; i< projectIds.length;i++ ) { %>
-                                     <input type="hidden" name=<%=projectIds %> value=""> 
-                                    <% } %>
-                                </div>  
-                            </div>
-                        <div class="mb-3">
-                            <label for="parameters" class="form-label">choose parameters</label>
-                        <select
-                                class="form-control bootstrap-table-filter-control-name" id="parameters" name="parameters">
-                              
-                                    <option>
-                                        action                                
-                                    </option>
-                                    <option>
-                                        name
-                                    </option>
-                                    <option>
-                                        displayName
-                                    </option>
-                                 
-                                 
-                            </select>
-                 
+                       
+
+
+                        <input type="text" name="df" class="form-control bootstrap-table-filter-control-name" id="formSelect1"
+                            placeholder="displayName" />
                           
-                           
-
-                    
-                          
-                        </div>
-
-
-                        <input type="text" name="parameter" class="form-control bootstrap-table-filter-control-name" id="formSelect1"
-                            placeholder="parameter" />
                     </div>
                 </div>
             </div>
-            <input type="submit" value="submit">
-        </form>
+
+            </div>
+
+            <input type="submit" value="add">
         
+        </form>
+            </div>
+        
+        <h2>
+        Dfs Comparison
+        
+        </h2>
+        <% if(df.length >0){ %>
+            <% for (let ia=0; ia < df.length;ia++ ) { %>
+            
+             
+                <table id="table" class="table table-striped " data-filter-control="true" data-show-search-clear-button="true"
+                    data-filter-control-container="#search">
+                    <thead>
+                        <tr>
+            
+                            
+                            <th data-field="id">agent-id</th>
+            
+                           
+                            <th data-field="price" data-filter-control="select">displayName</th>
+                          
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                 
+                         
+                                    <tr>
+                                       
+                                        <td>
+                                            <%= files[ia].id %>
+                                        
+                                        </td>
+                                        <td>
+                                          <%= df[ia] %>
+            
+                                        </td>
+                                  
+            
+                                    </tr>
+                             
+                              
+            
+                    </tbody>
+                </table>
+                    <% } %>
+                    <% } %>
+                 
+
+        <label for="upload" class="form-label">choose parameters</label>
+        <form action="/compare" method="GET">
+            <input type="text" name="parameters" class="form-control bootstrap-table-filter-control-name" id="formSelect1" />
+        
+            <input type="submit" value="compare">
+        </form>
+      
+        <% if(param.length>0){ %>
+      
+        
+        
+                <table id="table" class="table table-striped " data-filter-control="true" data-show-search-clear-button="true"
+                    data-filter-control-container="#search">
+                    <thead>
+                        <tr>
+        
+        
+                            <th data-field="id">displayName</th>
+        
+        <th data-field="price" data-filter-control="select">parameter</th>
+                            <th data-field="price" data-filter-control="select">data</th>
+        
+        
+                        </tr>
+                    </thead>
+                    <tbody>
+        <% if(files.length > 0){ %>
+        <% for(let i =0 ;i< files.length;i++  ){ %>
+                        <tr>
+                            
+                            <td>
+                                <%= df[i] %>
+        
+                            </td>
+                                <% if(param.length>2) { %>
+                         <td>
+                            <%=  parameter[i] %>
+                         </td>
+                            <td>
+
+                            
+                             
+                                <%= files[i][param[0]][0][param[1]][i][param[2]]%>
+                             
+                                    <!-- <form action="/update" method="GET">
+                                        <input type="text" name="update" id="">
+                                    </form>
+                                 -->
+                                    </td>
+                            
+                           
+                        <% } else { %>
+                        <td>
+                           
+                        
+                        </td>
+            <%} %>
+                        </tr> 
+        
+        
+            <% } %>
+                <% } %>
+                    </tbody>
+           
+                </table>
+               
+                <% } %>
+                <h2>copy intents or entities</h2>
+    <div class="accordion" id="accordionPanelsStayOpen">
+        <div class="accordion-item">
+    
+          
+    
+            <div class="mb-3">
+    
+    
+                <form action="/copy" method="GET">
+                    <input type="file" name="upload" class="form-control bootstrap-table-filter-control-name"
+                        id="formSelect2" />
+                    <input type="file" name="upload2" class="form-control bootstrap-table-filter-control-name"
+                        id="formSelect3"  multiple/>
+    
+    
+                    <input type="submit" value="copy">
+    
+                </form>
+            </div>
+            <!-- <form action="/copy" method="GET">
+    
+        <input type="text" name="parameters" class="form-control bootstrap-table-filter-control-name" id="formSelect1" />
+    
+        <input type="submit" value="compare">
+    </form> -->
+    
+        </div>
     </div>
+        </div>
+
+    
 </body>
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"
     integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>

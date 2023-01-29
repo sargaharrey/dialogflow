@@ -1,0 +1,357 @@
+{
+  "id": "c05eb8c7-85e5-40a1-b930-31f69024a83a",
+  "name": "--1-AudiVWSpokane",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "get_name_ymm",
+      "affectedContexts": [
+        {
+          "name": "config",
+          "lifespan": 99
+        },
+        {
+          "name": "makeAppt",
+          "lifespan": 1
+        },
+        {
+          "name": "NoName-followup",
+          "lifespan": 1
+        },
+        {
+          "name": "fixedLine",
+          "lifespan": 99
+        },
+        {
+          "name": "transferOperator",
+          "lifespan": 99
+        },
+        {
+          "name": "NoRecall",
+          "lifespan": 99
+        },
+        {
+          "name": "adHoc",
+          "lifespan": 99
+        },
+        {
+          "name": "dropIn",
+          "lifespan": 99
+        },
+        {
+          "name": "compressed",
+          "lifespan": 99
+        },
+        {
+          "name": "transferVM",
+          "lifespan": 99
+        },
+        {
+          "name": "firstResponder",
+          "lifespan": 1
+        },
+        {
+          "name": "getYMM",
+          "lifespan": 2
+        }
+      ],
+      "parameters": [
+        {
+          "id": "cf50b59d-57cc-492f-b903-725ac66c2007",
+          "name": "customerPhone",
+          "required": false,
+          "dataType": "@sys.phone-number",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "db952a2c-a7d5-4e23-ba96-2b25d13ae73e",
+          "name": "advisorNumber",
+          "required": false,
+          "dataType": "@sys.phone-number",
+          "value": "700",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "2dbd84c9-e19a-4bea-957c-4dc60dd49776",
+          "name": "advisorEmail",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "booking@allio.io",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "ed677b5a-68f2-45d6-9f8c-790455c5af08",
+          "name": "businessName",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "Audi Spokane",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "b4de7176-99a4-4fde-a83b-69ea8c47bdc8",
+          "name": "example",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "A4",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "9671b1e6-023c-4cd3-a7e0-497dd1ff7b05",
+          "name": "make",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "Audi",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "326d3d03-6471-48c6-9eb0-e2df249ae438",
+          "name": "welcomeFile",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "\u003caudio soundLevel\u003d\"+15dB\" src\u003d\"\"\u003e \nWelcome to the service department\u003c/audio\u003e",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "62c61ec1-2b1d-4a30-8ab2-c5f6a2988c50",
+          "name": "greeting",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "\u003caudio soundLevel\u003d\"+15dB\" src\u003d\"https://storage.googleapis.com/autoserviceai/0-DF/AllioDigialAssistant.ogg\"\u003e \nThis is Allio your digital assistant \n\u003c/audio\u003e",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "15b1b470-5bf4-42b6-b54b-0f5ed966c60f",
+          "name": "prompt",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "\u003caudio soundLevel\u003d\"+15dB\" src\u003d\"https://storage.googleapis.com/autoserviceai/S-PleaseSayMakeApptOrOther.ogg\"\u003e\nPlease say make appointment or say other\u003c/audio\u003e",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "283da366-bb4f-449d-88f7-558976e2e4b1",
+          "name": "fallbackService",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "REP",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "a5c75cfa-91d1-4caf-a338-e70453122807",
+          "name": "recallService",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "REP",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "42303932-515b-4b3d-8ff3-de4c63a0eaf1",
+          "name": "transportQuestion2",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "\u003caudio soundLevel\u003d\"+15dB\" src\u003d\"https://storage.googleapis.com/autoserviceai/dropOffWaitorRide.ogg\"\u003eWould you like to drop off your vehicle, wait at the dealership, or would you need a ride?\u003c/audio\u003e",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "47ba40f4-007f-40b6-a0c9-4f5b0dbaffb3",
+          "name": "check_url",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "https://ubq6mtrdlc.execute-api.us-west-2.amazonaws.com/cdk/check?id\u003dAUDISPOKANE\u0026brand\u003dAUDI\u0026dealer\u003d2000559",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "9e6e257f-d402-45f5-ae67-8b576da6497b",
+          "name": "book_url",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "https://uegz9ad0p6.execute-api.us-east-1.amazonaws.com/cdk/book?id\u003dAUDISPOKANE\u0026dealer\u003d2000559",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "7c16f5f7-ed98-4226-bb56-406edb7f8225",
+          "name": "WeekOpenCloseSatOpenClose",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "7:00,19:00,8:00,17:00",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "05ad9eb9-2f1b-41f6-a60e-d96b4aaa2412",
+          "name": "hoursLocation",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "We are located at 10006 East Sprague ave, Spokane. Our service department is open 7 AM to 7 PM, Monday through Friday, and, 8 AM to 5 PM on Saturday",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "d5987a1e-154d-4f59-bb07-98a9d5dfb281",
+          "name": "apiName",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "apiDoesNoRequireCustomerName",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "9e65e55c-b3ad-41a2-9510-92a6941cd2b1",
+          "name": "timeSlots",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "MTWTF,START,08:00,END,13:00,PERIOD,60,S,START,01:00,END,01:01,PERIOD,60,SKIPHR-336",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "4d90be52-bae5-4486-ae87-e3ad546931f6",
+          "name": "askYMM",
+          "required": false,
+          "dataType": "@sys.any",
+          "value": "\u003caudio soundLevel\u003d\"+15dB\" src\u003d\"https://storage.googleapis.com/autoserviceai/0-DF/YMM.ogg\"\u003e\nPlease tell me the year, make and model of the vehicle you would like serviced\n\u003c/audio\u003e",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "\u003cspeak\u003e$greeting\u003c/speak\u003e"
+          ],
+          "condition": ""
+        }
+      ],
+      "defaultResponsePlatforms": {
+        "telephony": true
+      },
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [
+    {
+      "name": "WELCOME"
+    }
+  ],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}
