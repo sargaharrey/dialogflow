@@ -175,11 +175,13 @@
     app.get('/compare', async (req, res) => {
         // const file =`${req.query.parameters}`
 
-        const regex = new RegExp(`projects=(.*?)(&)`);
+        
         // var searchParameter = req.url.split('parameter=')[1];
         // console.log(searchParameter)
-        console.log(req.query.parameters )
-        var files = req.url.split(regex);
+      
+
+
+
         //  var DFS = files.filter(i => i != '' && i != '&')
 
         // var DFSFiles = authIDs.filter(item => DFS.map(project => item.includes(project) ))
@@ -198,7 +200,7 @@
         // var url_parts = url.parse(req.url, true);
         // var query = url_parts.query;
         // console.log(query)
-        const dialogflow = require('dialogflow');
+      
     
         // console.log()
         // for (let i = 0; i < DFSFilesRoutes.length;i++){
@@ -301,6 +303,11 @@
         console.log(uu)
         param = uu
         parameter.push(req.query.parameters)
+
+        console.log(param,parameter)
+
+
+
     //     console.log(uu[0].uu[1].uu[2])
         // res.render('DataTables', { finalResulta, projectIds });
         // console.log(req.query)
