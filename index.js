@@ -14,28 +14,30 @@
     app.set('view engine', 'ejs');
 
     const { google } = require('googleapis');
-    const dialogflow = google.dialogflow('v2');
+      const dialogflow1 = require('dialogflow');
+ 
+    // const dialogflow = google.dialogflow('v2');
 
-    const key = require('./fourth.json')
-    // Create a JWT client
-    const jwtClient = new google.auth.JWT(
-        key.client_email,
-        null,
-        key.private_key,
-        ['https://www.googleapis.com/auth/dialogflow']
-        //   { keyFile: './fourth.json'},
-        //     ['https://www.googleapis.com/auth/dialogflow']
-    );
+    // const key = require('./fourth.json')
+    // // Create a JWT client
+    // const jwtClient = new google.auth.JWT(
+    //     key.client_email,
+    //     null,
+    //     key.private_key,
+    //     ['https://www.googleapis.com/auth/dialogflow']
+    //     //   { keyFile: './fourth.json'},
+    //     //     ['https://www.googleapis.com/auth/dialogflow']
+    // );
 
-    const auth = new google.auth.JWT(
-        key.client_email,
-        null,
-        key.private_key,
-        ['https://www.googleapis.com/auth/dialogflow']
+    // const auth = new google.auth.JWT(
+    //     key.client_email,
+    //     null,
+    //     key.private_key,
+    //     ['https://www.googleapis.com/auth/dialogflow']
 
 
 
-    );
+    // );
     var url = require('url');
     const { iam } = require('googleapis/build/src/apis/iam');
     const { dfareporting } = require('googleapis/build/src/apis/dfareporting');
@@ -179,8 +181,7 @@
         // var url_parts = url.parse(req.url, true);
         // var query = url_parts.query;
         // console.log(query)
-          const dialogflow1 = require('dialogflow');
- 
+        
     // console.log()
     
     
