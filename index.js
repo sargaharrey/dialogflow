@@ -132,7 +132,7 @@
 // if(responses[0] ){
 // console.log(responses[0][0][0][0].messages)
 // }
-      await  res.render('projects', { df, files, param, parameter,responses })
+        res.render('projects', { df, files, param, parameter,responses })
         // console.log(auth)
 
     });
