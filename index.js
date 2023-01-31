@@ -257,7 +257,7 @@
             // data.push(finalResult)
         // files.push(file)
         // res.redirect('/')
-     console.log( responses)
+    //  console.log( responses)
             //  console.log('====================')
         res.redirect('/')
 
