@@ -13,8 +13,8 @@
     const upload = multer({ dest: '/' })
     app.set('view engine', 'ejs');
 
-    const { google } = require('googleapis');
-      const dialogflow1 = require('dialogflow');
+    // const { google } = require('googleapis');
+      var dialogflow1 = require('dialogflow');
  
     // const dialogflow = google.dialogflow('v2');
 
@@ -140,7 +140,7 @@
     app.get('/add', async (req, res) => {
     
             const route = req.query.upload.split('&')[0]
-         files.push(require(`/${route}`))
+         files.push(require(`${route}`))
         // console.log(file)
 
         // // console.log('======================', `./${req.url.split('=')[1]}`)
