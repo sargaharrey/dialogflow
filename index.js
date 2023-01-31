@@ -13,9 +13,7 @@
     const upload = multer({ dest: '/' })
     app.set('view engine', 'ejs');
 
-    // const { google } = require('googleapis');
-      var dialogflow1 = require('dialogflow');
- 
+    const { google } = require('googleapis');
     // const dialogflow = google.dialogflow('v2');
 
     // const key = require('./fourth.json')
@@ -132,7 +130,7 @@
 // if(responses[0] ){
 // console.log(responses[0][0][0][0].messages)
 // }
-        res.render('projects', { df, files, param, parameter,responses })
+      await  res.render('projects', { df, files, param, parameter,responses })
         // console.log(auth)
 
     });
@@ -140,7 +138,7 @@
     app.get('/add', async (req, res) => {
     
             const route = req.query.upload.split('&')[0]
-         files.push(require(`./${route}`))
+         files.push(require(`/${route}`))
         // console.log(file)
 
         // // console.log('======================', `./${req.url.split('=')[1]}`)
@@ -181,7 +179,8 @@
         // var url_parts = url.parse(req.url, true);
         // var query = url_parts.query;
         // console.log(query)
-        
+          const dialogflow1 = require('dialogflow');
+ 
     // console.log()
     
     
