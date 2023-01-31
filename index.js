@@ -14,7 +14,7 @@
     app.set('view engine', 'ejs');
 
     const { google } = require('googleapis');
-    // const dialogflow = google.dialogflow('v2');
+    const dialogflow = google.dialogflow('v2');
 
     // const key = require('./fourth.json')
     // // Create a JWT client
