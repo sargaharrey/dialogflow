@@ -138,7 +138,7 @@
     app.get('/add', async (req, res) => {
     
             const route = req.query.upload.split('&')[0]
-         files.push(require(`${route}`))
+         files.push(require(`/${route}`))
         // console.log(file)
 
         // // console.log('======================', `./${req.url.split('=')[1]}`)
@@ -257,7 +257,7 @@
             // data.push(finalResult)
         // files.push(file)
         // res.redirect('/')
-    //  console.log( responses)
+     console.log( responses)
             //  console.log('====================')
         res.redirect('/')
 
