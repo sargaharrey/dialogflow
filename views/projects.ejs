@@ -73,7 +73,7 @@
                                     <tr>
                                        
                                         <td>
-                                            <%= files[ia].id %>
+                                            <%= files[ia].client_id %>
                                         
                                         </td>
                                         <td>
@@ -99,10 +99,10 @@
             <input type="submit" value="compare">
         </form>
       
-        <% if(param.length>0){ %>
+        <% if(parameter.length>0){ %>
       
         
-        
+                <% for(let ia=0;ia < parameter.length;ia++){ %>
                 <table id="table" class="table table-striped " data-filter-control="true" data-show-search-clear-button="true"
                     data-filter-control-container="#search">
                     <thead>
@@ -117,7 +117,9 @@
         
                         </tr>
                     </thead>
+            
                     <tbody>
+                  
         <% if(files.length > 0){ %>
         <% for(let i =0 ;i< files.length;i++  ){ %>
                         <tr>
@@ -126,38 +128,70 @@
                                 <%= df[i] %>
         
                             </td>
-                                <% if(param.length>2) { %>
-                         <td>
-                            <%=  parameter[i] %>
-                         </td>
-                            <td>
+                                <% if(parameter[ia].length>0) { %>
 
-                            
-                             
-                                <%= files[i][param[0]][0][param[1]][i][param[2]]%>
-                             
-                                    <!-- <form action="/update" method="GET">
-                                        <input type="text" name="update" id="">
-                                    </form>
-                                 -->
-                                    </td>
-                            
+                         <td>
+                            <%=  parameter[ia] %>
+                         </td>
+                        <% for(let i1=0 ;i1< responses[0][0][i].length;i1++ ){ %>
+                      <td>
+                        <%= responses[0][0][i][i1][parameter[ia][0]] %>
+                      </td>
+                      <%}%>
+                            <%} else if(parameter[ia][i].length>1) {%>
+                                <% for(let i1=0 ;i1< responses[0][0][i].length;i1++ ){ %>
+                                        <% for(let i2=0 ;i1< responses[0][0][i][i1].length;i2++ ){ %>
                            
-                        <% } else { %>
-                        <td>
-                           
-                        
+                                <td>
+                            
+                            
+                            
+                                    <%=  responses[0][0][i][i1][parameter[ia][0]][i2][parameter[ia][1]]%>
+                            
+                                        <!-- <form action="/update" method="GET">
+                                                                    <input type="text" name="update" id="">
+                                                                </form>
+                                                             -->
+                            
+                            
+                                </td>
+                                <% }%> 
+                                <% }%>
+                                <%} else if(parameter[ia][i].length>2) { %>
+                                    <% for(let i1=0 ;i1< responses[0][0][i].length;i1++ ){ %>
+                                        <% for(let i2=0 ;i1< responses[0][0][i][i1].length;i2++ ){ %>
+                                            <% for(let i3=0 ;i3< responses[0][0][i][i1][i2].length;i2++ ){ %>
+                                            <td>
+                                            
+                                            
+                                            
+                                                <%= responses[0][0][i][i1][parameter[ia][i][0]][i2][parameter[ia][i][1]][i3][parameter[ia][i][2]]%>
+                                            
+                                                    <!-- <form action="/update" method="GET">
+                                                                                                                <input type="text" name="update" id="">
+                                                                                                            </form>
+                                                                                                         -->
+                                            
+                                            
+                                            </td>
+                          <%}%>
+                        <%}%>
+                        <%}%>
+                            <% } else{ %>
+                           <td>
                         </td>
-            <%} %>
+          
                         </tr> 
         
         
             <% } %>
                 <% } %>
+
                     </tbody>
            
                 </table>
-               
+                <% } %>
+                <% } %>
                 <% } %>
                 <h2>copy intents or entities</h2>
     <div class="accordion" id="accordionPanelsStayOpen">
