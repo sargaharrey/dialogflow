@@ -77,6 +77,7 @@
     //     // const request = {
     //     //     parent: intentsClient.projectAgentPath(projectId),
     //     // };
+<<<<<<< HEAD
 
     //     const responses = await dialogflow.projects.agent.intents.list({
     //         auth: auth,
@@ -313,6 +314,236 @@
          console.log()
          console.log(parameter)
         // console.log('-------',responses[0][0].map(item =>{return  item.filter(item => item[param] === param.split('=')[1])}), param)
+=======
+
+    //     const responses = await dialogflow.projects.agent.intents.list({
+    //         auth: auth,
+    //         parent: `projects/${projectId}/agent`
+    //     })
+
+    //     const intents = responses.data.intents;
+    //     console.log(intents)
+
+    //     res.render('intents', { intents });
+
+    // });
+
+    app.get('/', async (req, res) => {
+        // const request = {
+        //     parent: intentsClient.projectAgentPath(projectId),
+        // };
+
+        // const intents = responses.data.intents;
+        // console.log(intents)
+        // res.render('intents', projectId);
+        // projectIds = authIDs.map(item => ({ item: item, id: require(item).project_id }))
+        // console.log(projectIds)
+        // res.render('projects', projectIds)
+        // console.log(req)
+        //  const file = require(`./${req.url.split('upload=')[1].substr(0,req.url.split('=')[1].length-5)}`)
+        // const file = require(req.query.upload)
+        // console.log(req)
+
+        // // // console.log('======================', `./${req.url.split('=')[1]}`)
+        // const auth = new google.auth.JWT(
+        //     file.client_email,
+        //     null,
+        //     file.private_key,
+        //     ['https://www.googleapis.com/auth/dialogflow']
+        // );
+        // dialogflow.projects.agent.entityTypes.list({
+        //     auth: auth,
+        //     parent: `projects/${file.project_id}/agent`
+        // }).then(item =>
+        //     responses.push(item)
+        // )
+        // // console.log(authIDs) 
+
+        // // authIDs.push(`./${req.url.split('=')[1]}`) 
+        // names.push(req.parameter)
+        // for (let i = 0; i < names; i++) {
+        //     df.push([names[i], [responses]])
+        // }   
+
+        res.render('projects', { df, files, param, parameter })
+        // console.log(auth)
+
+    });
+
+    app.get('/add', async (req, res) => {
+        const file = require(`./${req.query.upload}`)
+        console.log(file)
+
+        // // console.log('======================', `./${req.url.split('=')[1]}`)
+        // const auth = new google.auth.JWT(
+        //     file.client_email,
+        //     null,
+        //     file.private_key,
+        //     ['https://www.googleapis.com/auth/dialogflow']
+        // );
+        // dialogflow.projects.agent.entityTypes.list({
+        //     auth: auth,
+        //     parent: `projects/${file.project_id}/agent`
+        // }).then(item =>
+        //     responses.push(item)
+        // )
+        // console.log(authIDs) 
+
+        // authIDs.push(`./${req.url.split('=')[1]}`) 
+    
+    
+            // names.push(req.query.parameter)
+            df.push(req.query.df)
+        files.push(file)
+        // res.redirect('/')
+    // console.log(df)
+
+        res.redirect('/')
+
+
+    })
+
+
+    // app.get('/add',  async (req, res) => {
+
+    
+
+    // })
+
+    app.get('/compare', async (req, res) => {
+        // const file =`${req.query.parameters}`
+
+        
+        // var searchParameter = req.url.split('parameter=')[1];
+        // console.log(searchParameter)
+      
+
+
+
+        //  var DFS = files.filter(i => i != '' && i != '&')
+
+        // var DFSFiles = authIDs.filter(item => DFS.map(project => item.includes(project) ))
+
+        //  var DFSFilesRoutes = DFSFiles.map(item => require(item))
+        // console.log(DFSFilesRoutes[0])
+        // console.log('.............................', DFSFiles )
+        // var projectIds = req.query.projects
+        // console.log(projectIds)
+        // var finalResult = []
+
+
+        // console.log(projectIds)
+        // console.log(authIDs, projectIds) 
+    
+        // var url_parts = url.parse(req.url, true);
+        // var query = url_parts.query;
+        // console.log(query)
+      
+    
+        // console.log()
+        // for (let i = 0; i < DFSFilesRoutes.length;i++){
+            
+        //     // ids.push(DFSFilesRoutes[i])
+        //     // Set the project ID and auth credentials
+        //     // const projectId = 'oversoft-35450';
+        //     // const credentials = {
+
+        //     // };
+        //     // console.log(DFSFilesRoutes[1].project_id)
+
+        //     // Create a new client
+        //     // console.log('======================================================================')
+        //     // const clientIntents = new dialogflow.v2.IntentsClient(
+
+        //     //     { credentials:DFSFilesRoutes[i] }
+        //     // );
+        //     // const clientEntites = new dialogflow.v2.EntityTypesClient(
+
+        //     //     { credentials: DFSFilesRoutes[i] }    
+        //     // );
+
+        // //     const agentPathIntent = clientIntents.projectAgentPath(`${DFSFilesRoutes[i].project_id}`);
+        // //  const agentPathEntity = clientEntites.projectAgentPath(`${DFSFilesRoutes[i].project_id}`);
+
+        // //     // , query: `displayName:${searchParameter}` 
+        // //     clientIntents.listIntents({ parent: agentPathIntent})
+        // //         .then(responses => {
+        // //              intentsArr.push(responses[0]);
+        // //             // console.log('Intents:');
+        // //           })
+        // //         .catch(err => {
+        // //             console.error('Failed to list intents:', err);
+        // //         });
+
+                
+
+        // //     clientEntites.listEntityTypes({ parent: agentPathEntity})
+        // //         .then(responses => {
+        // //             entitiesArr.push(responses[0]);
+        // //             // console.log('entities:');
+                
+                    
+        // //         }).catch(err => {
+        // //             console.error('Failed to list intents:', err);
+        // //         });
+
+        //         // , filter: `${req.query.parameters}`
+        //         // , filter: `${req.query.parameters}` 
+        //     // console.log(searchParameter.replace(/[+]/g, ' '))
+
+        //     // console.log(';;;;;;;;;;;;;;;;;;;;;',intents,entities)
+        //     // var dat = fuzzy.filter(`${searchParameter}`, intentsArr)     
+
+        //     // if (req.query.parameters === 'action') {
+        //     //     intentsArr.map( i => i.filter(item => item.action === searchParameter.replace(/[+]/g, ' ')))
+        //     //     entitiesArr.map(i => i.filter(item => item.action === searchParameter.replace(/[+]/g, ' '))) 
+
+        //     // }
+        //     // else if (req.query.parameters === 'name') {
+            
+
+        //     //     intentsArr.map(i => i.filter(item => item.name === searchParameter.replace(/[+]/g, ' ')))
+        //     //     entitiesArr.map(i => i.filter(item => item.name === searchParameter.replace(/[+]/g, ' '))) 
+        //     // }
+        //     // else {
+        //     //     intentsArr.map(i => i.filter(item => item.displayName === searchParameter.replace(/[+]/g, ' ')))
+        //     //     entitiesArr.map(i => i.filter(item => item.displayName === searchParameter.replace(/[+]/g, ' '))) 
+        //     //     // result2= entitiesArr.filter(item => item.displayName === searchParameter.replace(/[+]/g, ' '))
+        //     // }
+        //     finalResult.push([intentsArr, entitiesArr])
+        //     // console.log(finalResult.push([intentsArr, entitiesArr]))
+        //     }
+        // console.log(finalResult.map(i => i.flat(10).filter(a => a.length > 0)))
+        // console.log(encodeURIComponent(searchParameter))
+        // const filterd = Object.entries(intents).map(item => ite==)
+        
+        //  console.log('111111111111111111', intentsArr.filter(item => item.displayName === searchParameter.replace(/[+]/g, ' ')  ))
+
+        // let extractedString = myString.substring(startIndex, endIndex);
+    //  data.push(result)
+    //     data.push(result2)
+
+        // console.log('cccccccccccccccccccccc', intentsArr)
+    
+        //  var finnal = [result, result2]
+        // var finnal = result
+
+    //    const finalIntents =  finalResult[0].map( i=> i.filter(a => a.length > 0))
+    //     const finalEntites = finalResult[1].map(i => i.filter(a => a.length > 0))      
+        // finalResulta = [finalIntents, finalEntites]
+        // console.log(finalResult)
+
+        const uu = req.query.parameters.split('.')
+
+
+        // data = finalResulta
+        // console.log('=============',data.map(i =>  i)[0].map(i4=> i4).flat(10))
+        console.log(uu)
+        param = uu
+        parameter.push(req.query.parameters)
+
+        console.log(param,parameter)
+>>>>>>> cd7bd138e9a88ec24b2d593c2bd8090b641cb2e4
 
 
 
