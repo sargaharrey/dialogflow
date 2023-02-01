@@ -15,7 +15,7 @@
 
     const { google } = require('googleapis');
     const dialogflow = google.dialogflow('v2');
-
+    const dialogflow1 = require('dialogflow');
     // const key = require('./fourth.json')
     // // Create a JWT client
     // const jwtClient = new google.auth.JWT(
@@ -179,7 +179,7 @@
         // var url_parts = url.parse(req.url, true);
         // var query = url_parts.query;
         // console.log(query)
-          const dialogflow1 = require('dialogflow');
+      
  
     // console.log()
     
