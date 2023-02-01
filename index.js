@@ -154,7 +154,7 @@
         // }).then(item =>
         //     responses.push(item)
         // )
-        console.log(authIDs) 
+       
 
         // authIDs.push(`./${req.url.split('=')[1]}`) 
     
