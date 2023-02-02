@@ -45,7 +45,8 @@
     "node-fetch": "^2.6.8",
     "nodemo": "^1.0.0",
     "sqlite": "^4.1.2",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "dialogflow":"1.2.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
