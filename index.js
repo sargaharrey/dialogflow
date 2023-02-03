@@ -9,6 +9,7 @@
     var names = []
     var df = []
     var data = []
+   
     // Set multer file storage folder
     const upload = multer({ dest: '/' })
     app.set('view engine', 'ejs');
@@ -24,37 +25,28 @@
     var files = []
    
     app.get('/', async (req, res) => {
-      console.log(responses)
+      // console.log(responses)
       await  res.render('projects', { df, files, param, parameter,responses })
         // console.log(auth)
 
     });
    
     app.get('/page2', async (req, res) => {
-      console.log(responses)
+      // console.log(responses)
       await  res.render('copy')
         // console.log(auth)
 
     });
-app.get('/delete', async (req, res) => {
-    console.log(req.query.index)
-    
-     files.splice(req.query.index, 1)
-      await  res.redirect('/')
-        // console.log(auth)
 
-    })
     app.get('/add', async (req, res) => {
     
             const route = req.query.upload.split('&')[0]
-            if(route  !== undefined){
+            if(route.length > 0){
          files.push(require(`./${route}`))
         // console.log(file)
             }
-            else{
-                files = []
-            }
-        var finalResult = []
+            
+           var finalResult = []
 
 
        
@@ -101,20 +93,36 @@ app.get('/delete', async (req, res) => {
             responses.push([intentsArr, entitiesArr])
          
             }
- console.log(responses.push([intentsArr, entitiesArr]))
+
             // names.push(req.query.parameter)
             df.push(req.query.df)
-            // data.push(finalResult)
-        // files.push(file)
-        // res.redirect('/')
-     console.log( responses)
+            
+           
+     
+        
+    console.log(files)
             //  console.log('====================')
         res.redirect('/')
 
 
-    })
+        })
 
+app.get('/delete', async (req, res) => {
+// files.filter(function(v,i,a) {
+//    console.log( a.indexOf(v) , Number(req.query.index))
+//   return a.indexOf(v) === 0
+// }) ;
+        
+        
+  files = files.filter(function(v,i,a){return i !== Number(req.query.index)})
+  df = df.filter(function(v,i,a){return i !== Number(req.query.index)})
+    console.log('======================',files )
+    // console.log(y)
+    //  files.filter((value ,a,arr) => arr.indexOf[value] !==  req.query.index)
+      await  res.redirect('/')
+        // console.log(auth)
 
+    })  
     // app.get('/add',  async (req, res) => {
 
     
@@ -124,7 +132,7 @@ app.get('/delete', async (req, res) => {
     app.get('/compare', async (req, res) => {
         // const file =`${req.query.parameters}`
 
-        
+        if(files.length > 0){
          var searchParameter = req.url.split('parameters=')[1];
         // console.log(searchParameter)
       
@@ -135,13 +143,13 @@ app.get('/delete', async (req, res) => {
 
 
       
-        console.log(uu)
         parameter.push(searchParameter.split('.'))
-         console.log()
-         console.log(parameter)
-      
+         
+         res.redirect('/');
+        }
+      else{
         res.redirect('/');
-            
+      } 
     });
 
 

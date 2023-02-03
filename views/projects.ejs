@@ -49,15 +49,17 @@
         Dfs Comparison
         
         </h2>
+         <% if(files.length > 0){ %>
         <% if(df.length >0 && files.length> 0){ %>
-            <% for (let ia=0; ia < df.length;ia++ ) { %>
+          
             
-             
+            
                 <table id="table" class="table table-striped " data-filter-control="true" data-show-search-clear-button="true"
                     data-filter-control-container="#search">
                     <thead>
                         <tr>
-            
+             
+                            <th data-field="id">index</th>
                             
                             <th data-field="id">agent-id</th>
             
@@ -67,37 +69,55 @@
 
                         </tr>
                     </thead>
+                        
                     <tbody>
-                 
-                             
+                        <% for (let ia=0; ia < files.length;ia++ ) { %>
+                    <% if(files[ia] ){ %>
+                          
                                     <tr>
-                                       
+                                          <td>
+                                            <%= ia %>
+                                          </td>
                                         <td>
+                                       <% if(files[ia].project_id){ %>
                                             <%= files[ia].project_id %>
-                                        
+                                      <% } else { %>
+                                        <% } %>
                                         </td>
                                         <td>
                                           <%= df[ia] %>
-            
+                                           
                                         </td>
                                      <td>
                                                 <form action="/delete">
-                                                    <input type="hidden" name="index" value=<%= ia %> /> 
+                                                    <input type="hidden" name="index" value=<%=ia%> /> 
                                                     <input type="submit" value="delete">
                                                 </form>
                                             </td>  
-            
+                            
                                     </tr>
                                
-
-                              
+                           
+                               <% } else { %>       
+                            <%}%>
             
                     </tbody>
-               
+                    <% } %>
+                 
 
+                                    
+
+  <tbody>
+
+  </tbody>
+
+  <% } %>
                 </table>
+                   <% } else  {%>
+
+                
                     <% } %>
-                    <% } %>
+                  
                  
 
         <label for="upload" class="form-label">choose parameters</label>
@@ -107,7 +127,7 @@
             <input type="submit" value="compare">
         </form>
       
-        <% if(parameter.length>0){ %>
+        <% if(parameter.length>0 && files.length >0){ %>
       
         
                 <% for(let ia=0;ia < parameter.length;ia++){ %>
