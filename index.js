@@ -47,9 +47,13 @@ app.get('/delete', async (req, res) => {
     app.get('/add', async (req, res) => {
     
             const route = req.query.upload.split('&')[0]
+            if(route  !== undefined){
          files.push(require(`./${route}`))
         // console.log(file)
-
+            }
+            else{
+                files = []
+            }
         var finalResult = []
 
 
