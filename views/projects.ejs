@@ -49,7 +49,7 @@
         Dfs Comparison
         
         </h2>
-        <% if(df.length >0){ %>
+        <% if(df.length >0 && files.length> 0){ %>
             <% for (let ia=0; ia < df.length;ia++ ) { %>
             
              
@@ -69,24 +69,32 @@
                     </thead>
                     <tbody>
                  
-                         
+                             
                                     <tr>
                                        
                                         <td>
-                                            <%= files[ia].client_id %>
+                                            <%= files[ia].project_id %>
                                         
                                         </td>
                                         <td>
                                           <%= df[ia] %>
             
                                         </td>
-                                  
+                                     <td>
+                                                <form action="/delete">
+                                                    <input type="hidden" name="index" value=<%= ia %> /> 
+                                                    <input type="submit" value="delete">
+                                                </form>
+                                            </td>  
             
                                     </tr>
-                             
+                               
+
                               
             
                     </tbody>
+               
+
                 </table>
                     <% } %>
                     <% } %>
@@ -174,6 +182,7 @@
                                             
                                             
                                             </td>
+                                         
                           <%}%>
                         <%}%>
                         <%}%>
@@ -193,33 +202,19 @@
                 <% } %>
                 <% } %>
                 <% } %>
-                <h2>copy intents or entities</h2>
-    <div class="accordion" id="accordionPanelsStayOpen">
-        <div class="accordion-item">
-    
           
-    
-            <div class="mb-3">
-    
-    
-                <form action="/copy" method="GET">
-                    <input type="file" name="upload" class="form-control bootstrap-table-filter-control-name"
-                        id="formSelect2" />
-                    <input type="file" name="upload2" class="form-control bootstrap-table-filter-control-name"
-                        id="formSelect3"  multiple/>
-    
-    
-                    <input type="submit" value="copy">
-    
-                </form>
-            </div>
             <!-- <form action="/copy" method="GET">
     
         <input type="text" name="parameters" class="form-control bootstrap-table-filter-control-name" id="formSelect1" />
     
         <input type="submit" value="compare">
     </form> -->
-    
+    <div style="text-align:center;margin-top:50px">
+           <form action="/page2">
+        <input type="submit" value="go to copy">
+    </form>
+    </div>
+ 
         </div>
     </div>
         </div>
